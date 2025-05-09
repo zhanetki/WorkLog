@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkLog.EmployeesPage"
+             Title="👥 Zaměstnanci"
+             BackgroundColor="#1A192B">
+
+    <VerticalStackLayout Padding="20" Spacing="10">
+
+        <Label Text="👥 Seznam zaměstnanců"
+               FontSize="24"
+               TextColor="#C5A3FF"
+               HorizontalOptions="Center" />
+
+        <CollectionView x:Name="EmployeesCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Stroke="#3F3B59"
+                            StrokeThickness="1"
+                            Padding="10"
+                            Margin="5"
+                            BackgroundColor="#2A273F"
+                            StrokeShape="RoundRectangle 10">
+                        <VerticalStackLayout>
+
+                            <Label Text="{Binding Name}"
+                                   FontSize="18"
+                                   TextColor="White"
+                                   FontAttributes="Bold" />
+                            <Label Text="{Binding DisplayedHours}"
+                           FontSize="14"
+                           TextColor="#AAAAAA" />
+
+                            <HorizontalStackLayout HorizontalOptions="End" Spacing="10" Margin="0,5,0,0">
+                                <Button Text="💰 Výpočet mzdy"
+                                        BackgroundColor="#3F3B59"
+                                        TextColor="#C5A3FF"
+                                        Padding="8"
+                                        CornerRadius="8"
+                                        WidthRequest="140"
+                                        Clicked="OnCalculateSalaryClicked" />
+
+                                <Button Text="🗑️ Smazat"
+                                        BackgroundColor="#AA2E2E"
+                                        TextColor="White"
+                                        Padding="8"
+                                        CornerRadius="8"
+                                        WidthRequest="120"
+                                        Clicked="OnDeleteEmployeeClicked" />
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="🏠 Domů"
+                BackgroundColor="#3F3B59"
+                TextColor="#C5A3FF"
+                CornerRadius="10"
+                Padding="10"
+                Clicked="OnBackToHomeClicked" />
+
+    </VerticalStackLayout>
+</ContentPage>

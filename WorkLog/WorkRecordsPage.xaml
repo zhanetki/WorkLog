@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkLog.WorkRecordsPage"
+             BackgroundColor="#1E1E2E"
+             Title="🕒 Pracovní záznamy">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Label Text="🕒 Přehled pracovních záznamů"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   TextColor="#D0BCFF"
+                   HorizontalOptions="Center" />
+
+            <CollectionView x:Name="RecordsCollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BackgroundColor="#2A2A3B"
+        Stroke="#3B3755"
+        StrokeThickness="1"
+        StrokeShape="RoundRectangle 10"
+        Margin="0,5">
+                            <VerticalStackLayout Padding="12">
+                                <Label Text="{Binding EmployeeName}" FontSize="16" TextColor="#EDEDED" />
+                                <Label Text="{Binding ProjectName}" FontSize="14" TextColor="#B0AFC4" />
+                                <Label Text="{Binding Date}" FontSize="12" TextColor="#B0AFC4" />
+                                <Label Text="{Binding HoursWorked, StringFormat='Počet hodin: {0}'}" FontSize="12" TextColor="#B0AFC4" />
+
+                                <HorizontalStackLayout HorizontalOptions="End" Margin="0,5,0,0">
+                                    <Button Text="🗑️ Smazat záznam"
+                    BackgroundColor="#AA2E2E"
+                    TextColor="White"
+                    Padding="8"
+                    CornerRadius="8"
+                    WidthRequest="140"
+                    Clicked="OnDeleteRecordClicked" />
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </Border>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Text="➕ Přidat záznam"
+                    Clicked="OnAddRecordClicked"
+                    BackgroundColor="#3C3C4E"
+                    TextColor="#D0BCFF"
+                    FontSize="14"
+                    HeightRequest="42"
+                    CornerRadius="8" />
+
+            <Button Text="🏠 Domů"
+                    Clicked="OnBackToHomeClicked"
+                    BackgroundColor="#3C3C4E"
+                    TextColor="#D0BCFF"
+                    FontSize="14"
+                    HeightRequest="42"
+                    CornerRadius="8" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

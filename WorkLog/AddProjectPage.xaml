@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkLog.AddProjectPage"
+             BackgroundColor="#1E1E2E"
+             Title="Přidat projekt">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="📝 Název projektu"
+                   FontSize="16"
+                   TextColor="#D0BCFF" />
+            <Border Stroke="#3B3755"
+                    StrokeShape="RoundRectangle 8"
+                    BackgroundColor="#2A2A3B"
+                    Margin="0,0,0,10">
+                <Entry x:Name="ProjectNameEntry"
+                       Placeholder="Zadejte název"
+                       BackgroundColor="Transparent"
+                       TextColor="White"
+                       PlaceholderColor="#888"
+                       HeightRequest="40" />
+            </Border>
+
+            <Label Text="📋 Popis projektu"
+                   FontSize="16"
+                   TextColor="#D0BCFF" />
+            <Border Stroke="#3B3755"
+                    StrokeShape="RoundRectangle 8"
+                    BackgroundColor="#2A2A3B"
+                    Margin="0,0,0,10">
+                <Editor x:Name="ProjectDescriptionEditor"
+                        Placeholder="Popis..."
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        PlaceholderColor="#888"
+                        HeightRequest="100" />
+            </Border>
+
+            <Button Text="💾 Uložit"
+                    Clicked="OnSaveClicked"
+                    BackgroundColor="#3C3C4E"
+                    TextColor="#D0BCFF"
+                    FontSize="14"
+                    HeightRequest="42"
+                    CornerRadius="8" />
+
+            <Button Text="🏠 Domů"
+                    Clicked="OnBackToHomeClicked"
+                    BackgroundColor="#3C3C4E"
+                    TextColor="#D0BCFF"
+                    FontSize="14"
+                    HeightRequest="42"
+                    CornerRadius="8" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

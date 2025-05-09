@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkLog.AddEmployeePage"
+             Title="👤 Přidat zaměstnance"
+             BackgroundColor="#1A192B">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Jméno" FontSize="16" TextColor="#C5A3FF" />
+            <Entry x:Name="FirstNameEntry" Placeholder="Např. Jan"
+                   BackgroundColor="#2A273F" TextColor="White"
+                   PlaceholderColor="#AAAAAA" />
+
+            <Label Text="Příjmení" FontSize="16" TextColor="#C5A3FF" />
+            <Entry x:Name="LastNameEntry" Placeholder="Např. Novák"
+                   BackgroundColor="#2A273F" TextColor="White"
+                   PlaceholderColor="#AAAAAA" />
+
+            <Label Text="Pozice" FontSize="16" TextColor="#C5A3FF" />
+            <Entry x:Name="PositionEntry" Placeholder="Např. Manažer"
+                   BackgroundColor="#2A273F" TextColor="White"
+                   PlaceholderColor="#AAAAAA" />
+
+            <Label Text="Oddělení" FontSize="16" TextColor="#C5A3FF" />
+            <Entry x:Name="DepartmentEntry" Placeholder="Např. IT, HR..."
+                   BackgroundColor="#2A273F" TextColor="White"
+                   PlaceholderColor="#AAAAAA" />
+
+            <Label Text="Hodinová mzda (Kč/hod)" FontSize="16" TextColor="#C5A3FF" />
+            <Entry x:Name="RateEntry" Placeholder="Např. 250" Keyboard="Numeric"
+                   BackgroundColor="#2A273F" TextColor="White"
+                   PlaceholderColor="#AAAAAA" />
+
+            <Button Text="💾 Uložit"
+                    BackgroundColor="#3F3B59" 
+                    TextColor="#C5A3FF"
+                    CornerRadius="10"
+                    Padding="10"
+                    Clicked="OnSaveClicked" />
+
+            <Button Text="🏠 Domů"
+                    BackgroundColor="#3F3B59"
+                    TextColor="#C5A3FF"
+                    CornerRadius="10"
+                    Padding="10"
+                    Clicked="OnBackToHomeClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
